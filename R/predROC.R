@@ -6,6 +6,7 @@
 #' @return A data frame of ROC curve values based on a svyglm object and a test set
 #' @examples
 #' data(list = c("GES2013.drivers.design", "GES2013.drivers"))
+#' options(survey.lonely.psu = "adjust")
 #' model <- survey::svyglm(DROWSY ~ HEAVY_TRUCK + INT_HWY + SEX_IM + SPEEDREL,
 #'                             family = quasibinomial(link=logit),
 #'                             design = GES2013.drivers.design)
