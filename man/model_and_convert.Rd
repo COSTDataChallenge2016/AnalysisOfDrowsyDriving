@@ -26,10 +26,17 @@ The length of a string (in characters).
 }
 \examples{
 data(list = c("GES2013.drivers.design", "GES2013.drivers"))
+GES2013.drivers$TIME_TRANSFORM <- sapply(GES2013.drivers$TIME_OF_WEEK, function (x) .0026*exp(3*cos(2*pi*(x-4)/24)) + .0037*cos(2*pi*floor(x/24)/7) + .0034)
+GES2013.drivers$AGE_TRANSFORM <- GES2013.drivers$AGE_IM^2
+GES2014.drivers$TIME_TRANSFORM <- sapply(GES2014.drivers$TIME_OF_WEEK, function (x) .0026*exp(3*cos(2*pi*(x-4)/24)) + .0037*cos(2*pi*floor(x/24)/7) + .0034)
+GES2014.drivers$AGE_TRANSFORM <- GES2014.drivers$AGE_IM^2
+GES2013.drivers.design <- update(GES2013.drivers.design,
+                                                         TIME_TRANSFORM = GES2013.drivers$TIME_TRANSFORM,
+                                                         AGE_TRANSFORM = GES2013.drivers$AGE_TRANSFORM)
 response <- "DROWSY"
-predictor_list <- list(c ("HEAVY_TRUCK",  "INT_HWY",  "SEX_IM", "SPEEDREL"),
-                                 c ("HEAVY_TRUCK",  "INT_HWY",  "SEX_IM"))
-model_and_convert(response, predictor_list, GES2013.drivers.design, GES2013.drivers)
+predictor_list <- list(c ("HEAVY_TRUCK",  "INT_HWY",  "SEX_IM", "SPEEDREL", "TIME_TRANSFORM", "AGE_TRANSFORM"),
+                                 c ("HEAVY_TRUCK",  "INT_HWY",  "SEX_IM", "SPEEDREL"))
+model_and_convert(response, predictor_list, GES2013.drivers.design, GES2014.drivers)
 }
 \seealso{
 \code{\link{predROC}}

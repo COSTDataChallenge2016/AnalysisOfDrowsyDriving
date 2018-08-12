@@ -10,6 +10,9 @@
 mosaicSplom2 <- function (factors = c(),
                           mar_par = rep(0.5, 4))
 {
+  require(grid)
+  require(vcd)
+
   options(survey.lonely.psu="adjust")
 
   GES2013.drivers$DUMMY <- 1
