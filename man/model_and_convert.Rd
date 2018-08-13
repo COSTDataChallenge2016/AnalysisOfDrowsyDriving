@@ -12,7 +12,7 @@ model_and_convert(response, predictor_list, svydesignObj, test.set,
 
 \item{predictor_list}{a list whose elements are vectors of character strings specifying the desired predictor variables. A svyglm model is created for each element of the list.}
 
-\item{svydesignObj}{a svydesign object from which to create a svyglm object}
+\item{svydesignObj}{a svydesign object from which to create the svyglm models}
 
 \item{test.set}{a data frame whose variables match the svydesignObj, which is used to build ROC curves based on prediction}
 

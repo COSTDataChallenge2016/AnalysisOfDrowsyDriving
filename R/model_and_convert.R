@@ -2,7 +2,7 @@
 #'
 #' @param response a character string identifying the response variable
 #' @param predictor_list a list whose elements are vectors of character strings specifying the desired predictor variables. A svyglm model is created for each element of the list.
-#' @param svydesignObj a svydesign object from which to create a svyglm object
+#' @param svydesignObj a svydesign object from which to create the svyglm models
 #' @param test.set a data frame whose variables match the svydesignObj, which is used to build ROC curves based on prediction
 #' @param plot a Boolean indicating whether to plot the ROC curves for each model
 #' @return A data frame of ROC curve values for each input formula

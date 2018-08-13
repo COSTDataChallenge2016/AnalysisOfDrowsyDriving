@@ -2,6 +2,6 @@
 
 export(mergeGivenYear)
 export(model_and_convert)
-export(mosaicSplom2)
 export(predROC)
 export(runExample)
+export(svy_mosaic_splom)

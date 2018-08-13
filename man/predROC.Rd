@@ -7,11 +7,9 @@
 predROC(glm.obj, newData, plot = TRUE)
 }
 \arguments{
-\item{glm.obj}{a svyglm object}
+\item{glm.obj}{a survey::svyglm object whose response is a binary numeric variable taking the values 0, 1 or NA}
 
 \item{newData}{a data frame whose variables are compatible with the svyglm object, for use in prediction}
-
-\item{plot}{a boolean indicating whether or not to generate a plot}
 }
 \value{
 A data frame of ROC curve values based on a svyglm object and a test set
